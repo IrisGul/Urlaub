@@ -1,8 +1,17 @@
 public class Urlaub
 {
-    private String ort;
-    private int preis;
+    private String ort;   // eigenschaft ort
+    private int preis;    // zeilen kommentar
     private boolean allInc;
+    /*konstruktor
+     * block kommentar
+     */
+    public Urlaub(String neuOrt, int neuPreis, boolean neuAllInc)
+    {
+        ort=neuOrt;
+        preis=neuPreis;
+        allInc=neuAllInc;
+    }
     
     public String getOrt()
     {
