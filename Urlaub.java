@@ -37,4 +37,8 @@ public class Urlaub
     {
         allInc=neuAllInc;
     }
+    public void printUrlaub()
+    {
+        System.out.println( ort + " - " + preis + " EUR - Allinclusive: " + allInc);
+    }
 }
