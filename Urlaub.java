@@ -24,7 +24,7 @@ public class Urlaub
     }
     public Urlaub()
     {
-        setOrt("Dubai");
+        setOrt("Wien");
         setPreis(1999);
         setAllInclusive(false);
     }
@@ -54,6 +54,13 @@ public class Urlaub
     }
     public void printUrlaub()
     {
-        System.out.println( ort +" " + preis +" EUR " + allInclusive + " " );
+        if(allInclusive==true)
+        {
+        System.out.println( ort +" " + preis +" EUR  Allinclusive");
+        }
+        else
+        {
+        System.out.println( ort +" " + preis +" EUR  keine Verpflegung");
+        }
     }
 }
