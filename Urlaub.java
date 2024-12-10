@@ -1,17 +1,8 @@
 public class Urlaub
 {
-    private String ort;   // eigenschaft ort
-    private int preis;    // zeilen kommentar
-    private boolean allInc;
-    /*konstruktor
-     * block kommentar
-     */
-    public Urlaub(String neuOrt, int neuPreis, boolean neuAllInc)
-    {
-        ort=neuOrt;
-        preis=neuPreis;
-        allInc=neuAllInc;
-    }
+    private String ort;
+    private int preis;
+    private boolean allInclusive;
     
     public String getOrt()
     {
@@ -21,24 +12,20 @@ public class Urlaub
     {
         return preis;
     }
-    public boolean getAllInc()
+    public boolean getAllInclusive()
     {
-        return allInc;
+        return allInclusive;
     }
-    public void setOrt( String neuOrt)
+    public void setOrt(String ort)
     {
-        ort=neuOrt;
+        this.ort=ort;
     }
-    public void setPreis(int neuPreis)
+    public void setPreis(int preis)
     {
-        preis=neuPreis;
+        this.preis=preis;
     }
-    public void setAllInc( boolean neuAllInc)
+    public void setAllInclusive(boolean allInclusive)
     {
-        allInc=neuAllInc;
-    }
-    public void printUrlaub()
-    {
-        System.out.println( ort + " - " + preis + " EUR - Allinclusive: " + allInc);
+        this.allInclusive=allInclusive;
     }
 }
