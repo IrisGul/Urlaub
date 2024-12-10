@@ -63,6 +63,7 @@ public class Urlaub
         initialen=ort.substring(0,1);
         pos=ort.indexOf("")+1;
         initialen=initialen + ort.substring(pos,pos+1);
+        initialen=initialen.toLowerCase(); //kleine bushstaben
         return initialen;
     }
     public void setOrt(String ort)
@@ -71,7 +72,16 @@ public class Urlaub
     }
     public void setPreis(int preis)
     {
-        this.preis=preis;
+        //preis>=500 und preis<=3000
+        if((preis>=500)&&(preis<=3000))
+        {
+            this.preis=preis;
+        }
+        else
+        {
+            System.out.println("Fehler:ungültiges Preis.Muss zw. 500 und 3000 sein");
+            this.preis=1999;
+        }
     }
     public void setAllInclusive(boolean allInclusive)
     {
