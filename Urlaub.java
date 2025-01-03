@@ -3,7 +3,7 @@ public class Urlaub
     private String ort;
     private int preis;
     private boolean allInclusive;
-    
+    private ReiseBuro reiseBuro;
     public Urlaub (String ort,int preis, boolean allInclusive)
     {
         setOrt(ort);
@@ -40,31 +40,60 @@ public class Urlaub
     {
         return allInclusive;
     }
-    public String getZielort()
+    // public String getZielort()
+    // {
+        // int pos;
+        // String zielOrt;
+        // pos=ort.indexOf("-"); //5
+        // zielOrt=ort.substring(0,pos);
+        // return zielOrt;   
+    // }
+    // public String getLand()
+    // {
+        // int pos;
+        // String land;
+        // pos=ort.indexOf("-")+1;
+        // land=ort.substring(pos);
+        // return land;
+    // }
+    // public String getInitialen()
+    // {
+        // String initialen;
+        // int pos;
+        // initialen=ort.substring(0,1);
+        // pos=ort.indexOf("")+1;
+        // initialen=initialen + ort.substring(pos,pos+1);
+        // initialen=initialen.toLowerCase(); //kleine bushstaben
+        // return initialen;
+    // }
+    public String getZielOrt()
     {
         int pos;
-        String zielOrt;
-        pos=ort.indexOf("-"); //5
-        zielOrt=ort.substring(0,pos);
-        return zielOrt;   
+        String ZielOrt;
+        
+        pos=ort.indexOf("-");
+        ZielOrt=ort.substring(0,pos);
+        return ZielOrt;
+        //"ibiza-spanien"  -> "ibiza"
     }
     public String getLand()
     {
         int pos;
         String land;
+        
         pos=ort.indexOf("-")+1;
         land=ort.substring(pos);
         return land;
+        // "ibiza-spanien" -> "spanien"
     }
-    public String getInitialen()
+    //backreference 
+    public ReiseBuro getReiseBuro()
     {
-        String initialen;
-        int pos;
-        initialen=ort.substring(0,1);
-        pos=ort.indexOf("")+1;
-        initialen=initialen + ort.substring(pos,pos+1);
-        initialen=initialen.toLowerCase(); //kleine bushstaben
-        return initialen;
+        return reiseBuro;
+    }
+    public void setReiseBuro(ReiseBuro reiseBuro)
+    {
+        this.reiseBuro=reiseBuro;
     }
     public void setOrt(String ort)
     {
@@ -86,6 +115,29 @@ public class Urlaub
     public void setAllInclusive(boolean allInclusive)
     {
         this.allInclusive=allInclusive;
+    }
+    //Urlaub seite schreiben (this)
+    public void hinzufugen(ReiseBuro wo)
+    {
+        if(wo!=null)
+        {
+            wo.hinzufugen(this);
+        }
+        else
+        {
+            System.out.println("Fehler:kein Reise Buro");
+        }
+    }
+    public void loschen(ReiseBuro wo)
+    {
+        if(wo!=null)
+        {
+            wo.loschen(this);
+        }
+        else
+        {
+            System.out.println("Fehler");
+        }
     }
     public void printUrlaub()
     {
